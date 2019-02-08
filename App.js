@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, Image} from 'react-native';
+import { StyleSheet, Text, View, FlatList, Image, PixelRatio} from 'react-native';
 import Galleries from './Components/Galleries';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
 import  Profile  from './Components/Profile';
 import  Cart  from './Components/Cart';
+import  Art  from './Components/Art';
+
 
 class HomeScreen extends React.Component {
   render() {
@@ -16,20 +18,11 @@ class HomeScreen extends React.Component {
   }
 }
 
-class ArtWorks extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Settings!</Text>
-      </View>
-    );
-  }
-}
 
 const TabNavigator = createBottomTabNavigator(
   {
     Home: { screen: HomeScreen },
-    ArtWorks: { screen: ArtWorks },
+    ArtWorks: { screen: Art },
     Galleries:{screen:Galleries},
     Cart: {screen:Cart},
     Profile: {screen: Profile}

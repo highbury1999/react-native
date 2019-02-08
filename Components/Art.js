@@ -1,17 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Header from './Profile/Header';
-import Option from './Profile/Option';
 
-class Profile extends React.Component {
+class Art extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Header/>
-        <Option/>
+        <Text>This is the Art of the project</Text>
       </View>
     );
   }
 }
 
-export default Profile;
+export default Art;
