@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View, FlatList, Image, PixelRatio} from 'react-native';
 import Galleries from './Components/Galleries';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
-import { Ionicons } from '@expo/vector-icons';
 import  Profile  from './Components/Profile';
 import  Cart  from './Components/Cart';
 import  Art  from './Components/Art';
@@ -12,11 +11,34 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Home!</Text>
+        <View style={[styles.header, styles.subContainer]}>
+          <Text>header</Text>
+        </View>
+        <View style={[styles.header, styles.subContainer]}>
+          <Text>body</Text>
+        </View>
+        <View style={[styles.header, styles.subContainer]}>
+          <Text>bottom</Text>
+        </View>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width:'100%',
+    backgroundColor: '#636363',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  subContainer:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center'
+  }
+});
 
 
 const TabNavigator = createBottomTabNavigator(
@@ -43,9 +65,6 @@ const TabNavigator = createBottomTabNavigator(
         } else if (routeName === 'Profile') {
           return <Image source={require('./assets/Profile.png')} />;
         }
-
-        // You can return any component that you like here! We usually use an
-        // icon component from react-native-vector-icons
       },
     }),
     tabBarOptions: {
