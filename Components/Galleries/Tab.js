@@ -1,0 +1,115 @@
+import React from 'react';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+
+class Tab extends React.Component {
+ constructor(props){
+   super(props);
+   console.log('inside tab');
+   this.state = {
+     currentTab: this.props.currentTab
+   }
+
+   console.log(props);
+ }
+ switchTab(tab){
+   console.log(tab);
+   this.setState({
+     currentTab:tab
+   })
+   this.props.switchTab(tab)
+
+
+ }
+  render() {
+    return (
+      <View style={[styles.tabWrapper]}>
+        <View style={[styles.tabs]}>
+          {
+            this.state.currentTab == 1 ? ( <View style={[styles.tab, styles.tabBoder]}>
+              <TouchableOpacity
+                        style={styles.customBtnBG}
+                        onPress={this.switchTab.bind(this,1)}
+                      >
+                        <Text style={{color:'#000'}}>ShowAll</Text>
+                      </TouchableOpacity>
+            </View> ) : (<View style={[styles.tab, styles.tabBoderDefault]}>
+              <TouchableOpacity
+                        style={styles.customBtnBG}
+                        onPress={this.switchTab.bind(this,1)}
+                      >
+                        <Text style={{color:'#000'}}>ShowAll</Text>
+                      </TouchableOpacity>
+            </View>)
+          }
+          {
+            this.state.currentTab == 2 ? ( <View style={[styles.tab, styles.tabBoder]}>
+              <TouchableOpacity
+                        style={styles.customBtnBG}
+                        onPress={this.switchTab.bind(this,2)}
+                      >
+                        <Text style={{color:'#000'}}>Featured</Text>
+                      </TouchableOpacity>
+            </View> ) : ( <View style={[styles.tab, styles.tabBoderDefault]}>
+              <TouchableOpacity
+                        style={styles.customBtnBG}
+                        onPress={this.switchTab.bind(this,2)}
+                      >
+                        <Text style={{color:'#000'}}>Featured</Text>
+                      </TouchableOpacity>
+            </View> )
+          }
+          {
+            this.state.currentTab == 3 ? (<View style={[styles.tab, styles.tabBoder]}>
+              <TouchableOpacity
+                        style={styles.customBtnBG}
+                        onPress={this.switchTab.bind(this,3)}
+                      >
+                        <Text style={{color:'#000'}}>Favourites</Text>
+                      </TouchableOpacity>
+            </View>) : <View style={[styles.tab, styles.tabBoderDefault]}>
+              <TouchableOpacity
+                        style={styles.customBtnBG}
+                        onPress={this.switchTab.bind(this,3)}
+                      >
+                        <Text style={{color:'#000'}}>Favourites</Text>
+                      </TouchableOpacity>
+            </View>
+          }
+        </View>
+      </View>
+    );
+  }
+}
+const styles = StyleSheet.create({
+  tabWrapper:{
+    flex:1,
+    alignItems: 'center',
+    margin:5,
+    justifyContent: 'center',
+    backgroundColor: 'orange',
+    width:'100%'
+  },
+  tabs:{
+    flex:1,
+    flexDirection:'row',
+    alignItems:'center',
+    height:'100%',
+    justifyContent:'space-around',
+    paddingLeft:10,
+    paddingRight:10
+  },
+  tab:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+    height:'100%',
+    borderBottomWidth:5,
+  },
+  tabBoder:{
+    borderColor:'red'
+  },
+  tabBoderDefault:{
+    borderColor: 'orange',
+  }
+});
+export default Tab;
