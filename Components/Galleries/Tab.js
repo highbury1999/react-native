@@ -8,8 +8,6 @@ class Tab extends React.Component {
    this.state = {
      currentTab: this.props.currentTab
    }
-
-   console.log(props);
  }
  switchTab(tab){
    console.log(tab);
