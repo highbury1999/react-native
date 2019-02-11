@@ -7,7 +7,7 @@ class Navigation extends React.Component {
       <View style={[styles.navigation]}>
 
         <View style={[styles.naviTitle]}>
-          <Text>ArtWorks</Text>
+          <Text style={[styles.artwork]}>ArtWorks</Text>
         </View>
         <View style={[styles.naviIcons]}>
           <View style={[styles.search]}>
@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
   navigation: {
     flex:1,
     flexDirection:'row',
-    backgroundColor: '#636363',
     alignItems:'flex-end',
     width:'100%',
     padding:10
@@ -44,6 +43,10 @@ const styles = StyleSheet.create({
     alignItems:'flex-end',
     flexDirection:'row'
   },
+  artwork:{
+    fontSize:20,
+    fontWeight:'bold'
+  }
 });
 
 export default Navigation;

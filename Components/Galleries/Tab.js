@@ -28,31 +28,29 @@ class Tab extends React.Component {
                         style={styles.customBtnBG}
                         onPress={this.switchTab.bind(this,1)}
                       >
-                        <Text style={{color:'#000'}}>ShowAll</Text>
+                        <Text style={[styles.highlighColor]}>ShowAll</Text>
                       </TouchableOpacity>
             </View> ) : (<View style={[styles.tab, styles.tabBoderDefault]}>
               <TouchableOpacity
                         style={styles.customBtnBG}
                         onPress={this.switchTab.bind(this,1)}
                       >
-                        <Text style={{color:'#000'}}>ShowAll</Text>
+                        <Text style={[styles.normalColor]}>ShowAll</Text>
                       </TouchableOpacity>
             </View>)
           }
           {
             this.state.currentTab == 2 ? ( <View style={[styles.tab, styles.tabBoder]}>
               <TouchableOpacity
-                        style={styles.customBtnBG}
                         onPress={this.switchTab.bind(this,2)}
                       >
-                        <Text style={{color:'#000'}}>Featured</Text>
+                        <Text style={[styles.highlighColor]}>Featured</Text>
                       </TouchableOpacity>
             </View> ) : ( <View style={[styles.tab, styles.tabBoderDefault]}>
               <TouchableOpacity
-                        style={styles.customBtnBG}
                         onPress={this.switchTab.bind(this,2)}
                       >
-                        <Text style={{color:'#000'}}>Featured</Text>
+                        <Text style={[styles.normalColor]}>Featured</Text>
                       </TouchableOpacity>
             </View> )
           }
@@ -62,14 +60,13 @@ class Tab extends React.Component {
                         style={styles.customBtnBG}
                         onPress={this.switchTab.bind(this,3)}
                       >
-                        <Text style={{color:'#000'}}>Favourites</Text>
+                        <Text style={[styles.highlighColor]}>Favourites</Text>
                       </TouchableOpacity>
             </View>) : <View style={[styles.tab, styles.tabBoderDefault]}>
               <TouchableOpacity
-                        style={styles.customBtnBG}
                         onPress={this.switchTab.bind(this,3)}
                       >
-                        <Text style={{color:'#000'}}>Favourites</Text>
+                        <Text style={[styles.normalColor]}>Favourites</Text>
                       </TouchableOpacity>
             </View>
           }
@@ -84,7 +81,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin:5,
     justifyContent: 'center',
-    backgroundColor: 'orange',
+    backgroundColor: '#ccc',
     width:'100%'
   },
   tabs:{
@@ -104,10 +101,16 @@ const styles = StyleSheet.create({
     borderBottomWidth:5,
   },
   tabBoder:{
-    borderColor:'red'
+    borderColor:'#ed1515'
   },
   tabBoderDefault:{
-    borderColor: 'orange',
+    borderColor: '#ccc',
+  },
+  highlighColor:{
+    color:'#ed1515'
+  },
+  normalColor:{
+    color:'#000'
   }
 });
 export default Tab;

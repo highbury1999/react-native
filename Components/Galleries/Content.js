@@ -78,7 +78,6 @@ const styles = StyleSheet.create({
   },
   content:{
     flex:1,
-    borderWidth:2,
     width:'100%'
   }
 });
