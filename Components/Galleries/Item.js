@@ -19,13 +19,13 @@ class Item extends React.Component {
             source={require('../../assets/images/1.png')} />
           </View>
           <View style={[styles.title]}>
-            <Text>Tayvonner Cora - Ghearra</Text>
+            <Text style={[styles.titleTxt]}>Tayvonner Cora - Ghearra</Text>
           </View>
           <View style={[styles.description]}>
-            <Text>JESKA VALK</Text>
+            <Text style={[styles.descriptionTxt]}>JESKA VALK</Text>
           </View>
           <View style={[styles.price]}>
-            <Text>USD $120</Text>
+          <Text style={[styles.priceTxt]}>USD $120</Text>
           </View>
         </View>
         <View style={[styles.item]}>
@@ -34,13 +34,13 @@ class Item extends React.Component {
              source={require('../../assets/images/1.png')} />
           </View>
           <View style={[styles.title]}>
-            <Text>Carry</Text>
+            <Text style={[styles.titleTxt]}>Carry</Text>
           </View>
           <View style={[styles.description]}>
             <Text>FERN SIEBLER</Text>
           </View>
           <View style={[styles.price]}>
-            <Text>USD $120</Text>
+            <Text style={[styles.priceTxt]}>USD $120</Text>
           </View>
         </View>
       </View>
@@ -69,15 +69,25 @@ const styles = StyleSheet.create({
   },
   title:{
     flex:1,
-    alignItems:'center'
+    justifyContent:'flex-start'
+  },
+  titleTxt:{
+    fontWeight:'bold'
   },
   description:{
     flex:1,
-    alignItems:'center'
+    justifyContent:'flex-start',
+  },
+  descriptionTxt:{
+    fontSize:10
   },
   price:{
     flex:1,
-    alignItems:'center'
+    justifyContent:'flex-start',
+  },
+  priceTxt:{
+    fontWeight:'bold',
+    color:'#ed1515'
   }
 })
 export default Item;
