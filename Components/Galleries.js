@@ -13,6 +13,17 @@ class Galleries extends React.Component {
           <View style={[styles.naviTitle]}>
             <Text>ArtWorks</Text>
           </View>
+          <View style={[styles.naviIcons]}>
+            <View style={[styles.search]}>
+              <Text>search</Text>
+            </View>
+            <View style={[styles.load]}>
+              <Text>load</Text>
+            </View>
+            <View style={[styles.qrCode]}>
+              <Text>qrCode</Text>
+            </View>
+          </View>
         </View>
         <View style={[styles.tabWrapper]}>
           <View style={[styles.tabs]}>
@@ -56,24 +67,58 @@ const styles = StyleSheet.create({
     width:'100%',
     alignItems: 'center',
     justifyContent: 'center',
+    padding:10
   },
   navigation: {
     flex:1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection:'row',
     backgroundColor: '#636363',
+    alignItems:'flex-end',
     width:'100%'
+  },
+  naviTitle:{
+    flex:1,
+    justifyContent:'flex-start',
+    alignItems:'flex-start'
+  },
+  naviIcons:{
+    flex:1,
+    justifyContent:'space-around',
+    alignItems:'flex-end',
+    flexDirection:'row'
+  },
+  search:{
+  },
+  load:{
+
+  },
+  qrCode:{
+
   },
   tabWrapper:{
     flex:1,
     alignItems: 'center',
+    margin:5,
     justifyContent: 'center',
     backgroundColor: 'orange',
     width:'100%'
-
+  },
+  tabs:{
+    flex:1,
+    flexDirection:'row',
+    alignItems:'center',
+    height:'100%',
+    justifyContent:'space-around'
+  },
+  tab:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center',
+    borderColor:'red',
+    borderBottomWidth:0.5
   },
   contentWrapper:{
-    flex:9,
+    flex:10,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'red',
