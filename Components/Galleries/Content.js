@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, ScrollView } from 'react-native';
 import Item from './Item';
 
 class Content extends React.Component {
@@ -37,18 +37,15 @@ class Content extends React.Component {
     return (
       <View style={[styles.contentWrapper]}>
         {
-          this.state.currentTab == 1 && <View style={[styles.contentWrapper]}>
-            <View><Text>123</Text></View>
-            <View><Text>234</Text></View>
-          </View>
-        }
-        {
-          this.state.currentTab == 2 && <View style={[styles.mainContent]}>
-          <FlatList
+          this.state.currentTab == 1 &&
+          <FlatList style={[styles.content]}
           data={this.state.data}
           renderItem={({item}) => <Item item={item}/>}
-        />
-        </View>
+          />
+        }
+        {
+          this.state.currentTab == 2 &&
+          <Text>This is the selection num 2</Text>
         }
         {
           this.state.currentTab == 3 && <View styles={[styles.mainContent]}>
@@ -80,11 +77,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
     width:'100%'
   },
-  mainContent:{
+  content:{
+    flex:1,
     borderWidth:2,
-    backgroundColor:'grey',
-    flexDirection:'row',
-    flex:1
+    width:'100%'
   }
 });
 
