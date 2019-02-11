@@ -5,40 +5,17 @@ import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import  Profile  from './Components/Profile';
 import  Cart  from './Components/Cart';
 import  Art  from './Components/Art';
+import Home from './Components/Home';
 
 
 class HomeScreen extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <View style={[styles.header, styles.subContainer]}>
-          <Text>header</Text>
-        </View>
-        <View style={[styles.header, styles.subContainer]}>
-          <Text>body</Text>
-        </View>
-        <View style={[styles.header, styles.subContainer]}>
-          <Text>bottom</Text>
-        </View>
-      </View>
+      <Home/>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width:'100%',
-    backgroundColor: '#636363',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  subContainer:{
-    flex:1,
-    justifyContent:'center',
-    alignItems:'center'
-  }
-});
 
 
 const TabNavigator = createBottomTabNavigator(
