@@ -87,29 +87,69 @@ class Galleries extends React.Component {
                         </TouchableOpacity>
               </View>
             }
-
-
-
           </View>
         </View>
-        <View style={[styles.contentWrapper]}>
-          <View styles={[styles.content]}>
-            <View styles={[styles.block]}>
-              <View style={[styles.img]}>
-                <Text>img</Text>
-              </View>
-              <View style={[styles.title]}>
-                <Text>title</Text>
-              </View>
-              <View style={[styles.description]}>
-                <Text>description</Text>
-              </View>
-              <View style={[styles.price]}>
-                <Text>price</Text>
+        {
+          this.state.currentTab == 1 &&  (<View style={[styles.contentWrapper]}>
+            <View styles={[styles.content]}>
+              <View styles={[styles.block]}>
+                <View style={[styles.img]}>
+                  <Text>img111</Text>
+                </View>
+                <View style={[styles.title]}>
+                  <Text>title111</Text>
+                </View>
+                <View style={[styles.description]}>
+                  <Text>description111</Text>
+                </View>
+                <View style={[styles.price]}>
+                  <Text>price</Text>
+                </View>
               </View>
             </View>
-          </View>
-        </View>
+          </View>)
+        }
+        {
+          this.state.currentTab == 2 && (<View style={[styles.contentWrapper]}>
+            <View styles={[styles.content]}>
+              <View styles={[styles.block]}>
+                <View style={[styles.img]}>
+                  <Text>img222</Text>
+                </View>
+                <View style={[styles.title]}>
+                  <Text>title222</Text>
+                </View>
+                <View style={[styles.description]}>
+                  <Text>description222</Text>
+                </View>
+                <View style={[styles.price]}>
+                  <Text>price</Text>
+                </View>
+              </View>
+            </View>
+          </View>)
+        }
+        {
+          this.state.currentTab == 3 && (<View style={[styles.contentWrapper]}>
+            <View styles={[styles.content]}>
+              <View styles={[styles.block]}>
+                <View style={[styles.img]}>
+                  <Text>img333</Text>
+                </View>
+                <View style={[styles.title]}>
+                  <Text>title333</Text>
+                </View>
+                <View style={[styles.description]}>
+                  <Text>description333</Text>
+                </View>
+                <View style={[styles.price]}>
+                  <Text>price</Text>
+                </View>
+              </View>
+            </View>
+          </View>)
+        }
+
       </View>
     );
   }
