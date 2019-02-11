@@ -37,7 +37,7 @@ class Item extends React.Component {
             <Text style={[styles.titleTxt]}>Carry</Text>
           </View>
           <View style={[styles.description]}>
-            <Text>FERN SIEBLER</Text>
+            <Text style={[styles.descriptionTxt]}>FERN SIEBLER</Text>
           </View>
           <View style={[styles.price]}>
             <Text style={[styles.priceTxt]}>USD $120</Text>
@@ -77,6 +77,8 @@ const styles = StyleSheet.create({
   description:{
     flex:1,
     justifyContent:'flex-start',
+    marginTop:5,
+    marginBottom:5
   },
   descriptionTxt:{
     fontSize:10
