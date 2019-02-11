@@ -107,10 +107,12 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
   },
   highlighColor:{
-    color:'#ed1515'
+    color:'#ed1515',
+    fontWeight:'bold'
   },
   normalColor:{
-    color:'#000'
+    color:'#000',
+    fontWeight:'bold'
   }
 });
 export default Tab;

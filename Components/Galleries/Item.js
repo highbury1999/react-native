@@ -51,7 +51,8 @@ const styles = StyleSheet.create({
   container:{
     flex:1,
     flexDirection:'row',
-    padding:10
+    paddingLeft:10,
+    paddingRight:10
   },
   item:{
     flex:1,
