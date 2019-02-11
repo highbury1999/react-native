@@ -1,14 +1,26 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
+import Item from './Item';
 
 class Content extends React.Component {
   constructor(props){
     super(props);
     console.log('inside content');
     this.state = {
-      currentTab: this.props.currentTab
+      currentTab: this.props.currentTab,
+      data:[
+        {key: 'Devin'},
+        {key: 'Jackson'},
+        {key: 'James'},
+        {key: 'Joel'},
+        {key: 'John'},
+        {key: 'Jillian'},
+        {key: 'Jimmy'},
+        {key: 'Julie'},
+      ]
     }
     console.log(this.state);
+
 
   }
   componentWillReceiveProps(e) {
@@ -23,20 +35,10 @@ class Content extends React.Component {
       <View style={[styles.contentWrapper]}>
         {
           this.state.currentTab == 1 && <View styles={[styles.content]}>
-            <View styles={[styles.block]}>
-              <View style={[styles.img]}>
-                <Text>{this.state.currentTab}</Text>
-              </View>
-              <View style={[styles.title]}>
-                <Text>title111</Text>
-              </View>
-              <View style={[styles.description]}>
-                <Text>description111</Text>
-              </View>
-              <View style={[styles.price]}>
-                <Text>price</Text>
-              </View>
-            </View>
+          <FlatList
+          data={this.state.data}
+          renderItem={({item}) => <Item item={item}/>}
+        />
           </View>
         }
         {
