@@ -1,10 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 
 class Galleries extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      currentTab:1
+    }
+  }
+  switchTab(tab){
+    console.log(tab);
+    this.setState({
+      currentTab:tab
+     });
   }
   render() {
     return (
@@ -27,15 +36,60 @@ class Galleries extends React.Component {
         </View>
         <View style={[styles.tabWrapper]}>
           <View style={[styles.tabs]}>
-            <View style={[styles.tab]}>
-              <Text>Show All</Text>
-            </View>
-            <View style={[styles.tab]}>
-              <Text>Featured</Text>
-            </View>
-            <View style={[styles.tab]}>
-              <Text>Favourites</Text>
-            </View>
+            {
+              this.state.currentTab == 1 ? ( <View style={[styles.tab, styles.tabBoder]}>
+                <TouchableOpacity
+                          style={styles.customBtnBG}
+                          onPress={this.switchTab.bind(this,1)}
+                        >
+                          <Text style={{color:'#000'}}>ShowAll</Text>
+                        </TouchableOpacity>
+              </View> ) : (<View style={[styles.tab, styles.tabBoderDefault]}>
+                <TouchableOpacity
+                          style={styles.customBtnBG}
+                          onPress={this.switchTab.bind(this,1)}
+                        >
+                          <Text style={{color:'#000'}}>ShowAll</Text>
+                        </TouchableOpacity>
+              </View>)
+            }
+            {
+              this.state.currentTab == 2 ? ( <View style={[styles.tab, styles.tabBoder]}>
+                <TouchableOpacity
+                          style={styles.customBtnBG}
+                          onPress={this.switchTab.bind(this,2)}
+                        >
+                          <Text style={{color:'#000'}}>Featured</Text>
+                        </TouchableOpacity>
+              </View> ) : ( <View style={[styles.tab, styles.tabBoderDefault]}>
+                <TouchableOpacity
+                          style={styles.customBtnBG}
+                          onPress={this.switchTab.bind(this,2)}
+                        >
+                          <Text style={{color:'#000'}}>Featured</Text>
+                        </TouchableOpacity>
+              </View> )
+            }
+            {
+              this.state.currentTab == 3 ? (<View style={[styles.tab, styles.tabBoder]}>
+                <TouchableOpacity
+                          style={styles.customBtnBG}
+                          onPress={this.switchTab.bind(this,3)}
+                        >
+                          <Text style={{color:'#000'}}>Favourites</Text>
+                        </TouchableOpacity>
+              </View>) : <View style={[styles.tab, styles.tabBoderDefault]}>
+                <TouchableOpacity
+                          style={styles.customBtnBG}
+                          onPress={this.switchTab.bind(this,3)}
+                        >
+                          <Text style={{color:'#000'}}>Favourites</Text>
+                        </TouchableOpacity>
+              </View>
+            }
+
+
+
           </View>
         </View>
         <View style={[styles.contentWrapper]}>
@@ -67,14 +121,14 @@ const styles = StyleSheet.create({
     width:'100%',
     alignItems: 'center',
     justifyContent: 'center',
-    padding:10
   },
   navigation: {
     flex:1,
     flexDirection:'row',
     backgroundColor: '#636363',
     alignItems:'flex-end',
-    width:'100%'
+    width:'100%',
+    padding:10
   },
   naviTitle:{
     flex:1,
@@ -108,14 +162,22 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     alignItems:'center',
     height:'100%',
-    justifyContent:'space-around'
+    justifyContent:'space-around',
+    paddingLeft:10,
+    paddingRight:10
   },
   tab:{
     flex:1,
     justifyContent:'center',
     alignItems:'center',
-    borderColor:'red',
-    borderBottomWidth:0.5
+    height:'100%',
+    borderBottomWidth:5,
+  },
+  tabBoder:{
+    borderColor:'red'
+  },
+  tabBoderDefault:{
+    borderColor: 'orange',
   },
   contentWrapper:{
     flex:10,
