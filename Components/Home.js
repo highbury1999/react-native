@@ -5,11 +5,19 @@ import Artist from './Home/Artist';
 import Artwork from './Home/Artwork';
 
 class Home extends React.Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerLeft:<Text>biyang</Text>,
+      headerTitle: <Text>niu ma</Text>,
+      headerRight: (
+        <Text>lvma</Text>
+      ),
+    };
+  };
  
   render() {
     return (
       <View style={[styles.container]}>
-        <Navigation/>
         <Artist/>
         <Artwork/>
       </View>
@@ -23,18 +31,6 @@ const styles = StyleSheet.create({
     width:'100%',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  artist:{
-    flex:1,
-    justifyContent:'center',
-    alignItems:'center',
-    borderWidth:1
-  },
-  artwork:{
-    flex:10,
-    justifyContent:'center',
-    alignItems:'center',
-    borderWidth:1
   }
 });
 

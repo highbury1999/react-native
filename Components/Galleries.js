@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
-import Navigation from './Galleries/Navigation';
 import Tab from './Galleries/Tab';
 import Content from './Galleries/Content';
 
@@ -26,7 +25,6 @@ componentDidUpdate(prevProps, prevState) {
   render() {
     return (
       <View style={[styles.container]}>
-          <Navigation/>
           <Tab currentTab={this.state.currentTab} switchTab={this.switchTab}/>
           <Content currentTab = {this.state.currentTab}/>
       </View>

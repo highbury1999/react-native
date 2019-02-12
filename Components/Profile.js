@@ -2,29 +2,34 @@ import React from 'react';
 import { StyleSheet, Text, View, Button} from 'react-native';
 import Header from './Profile/Header';
 import Option from './Profile/Option';
-import { createBottomTabNavigator, createAppContainer, createStackNavigator } from 'react-navigation';
 
-const Profile = createStackNavigator({
-  Home: {
-    screen: Header,
+class Profile extends React.Component {
+  static navigationOptions = ({ navigation }) => ({
+    title: '12'
+  })
+  render() {
+    return (
+      <View style={styles.container}>
+        <Header/>
+        <Option/>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  subContainer: {
+    flex: 1,
+    width:'100%',
+    backgroundColor: '#636363',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  Details: {
-    screen: Option,
-  },
-}, {
-    initialRouteName: 'Home',
-     defaultNavigationOptions: {
-            headerStyle: {
-                backgroundColor: '#28F1A6',
-                elevation: 0,
-                shadowOpacity: 0
-            },
-            headerTintColor: '#333333',
-            headerTitleStyle: {
-                fontWeight: 'bold',
-                color: '#ffffff'
-            }
-        }
+  container: {
+    flex:1,
+    justifyContent:'space-around',
+    alignItems:'center'
+  }
 });
 
 export default Profile;
