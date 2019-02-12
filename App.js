@@ -1,17 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList, Image, PixelRatio} from 'react-native';
-import Galleries from './Components/Galleries';
+import GalleriesStack from './Components/GalleriesStack';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import  Profile  from './Components/Profile';
 import  Cart  from './Components/Cart';
-import  Art  from './Components/Art';
+import  ArtStack  from './Components/ArtStack';
 import Home from './Components/Home';
 
 
 class HomeScreen extends React.Component {
   render() {
     return (
-      <Home/>
+      <Text>niu ma</Text>
     );
   }
 }
@@ -20,9 +20,9 @@ class HomeScreen extends React.Component {
 
 const TabNavigator = createBottomTabNavigator(
   {
-    Home: { screen: HomeScreen },
-    ArtWorks: { screen: Art },
-    Galleries:{screen:Galleries},
+    Home: { screen: ArtStack },
+    Artist: { screen: Cart },
+    Galleries:{screen:GalleriesStack},
     Cart: {screen:Cart},
     Profile: {screen: Profile}
   },
@@ -31,9 +31,9 @@ const TabNavigator = createBottomTabNavigator(
       tabBarIcon: ({ focused, tintColor }) => {
         const { routeName } = navigation.state;
         let iconName;
-        if (routeName === 'Home') {
+        if (routeName === 'Artist') {
           return <Image source={require('./assets/Home.png')}/>;
-        } else if (routeName === 'ArtWorks') {
+        } else if (routeName === 'Home') {
           return <Image source={require('./assets/Art.png')} />;
         } else if (routeName === 'Galleries') {
           return <Image source={require('./assets/Gallery.png')} />;

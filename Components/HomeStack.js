@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button} from 'react-native';
-import Home from './Home';
+import Galleries from './Galleries';
 import Option from './Profile/Option';
 import { createBottomTabNavigator, createAppContainer, createStackNavigator } from 'react-navigation';
 
 const HomeStack = createStackNavigator({
   Home: {
-    screen: Home,
+    screen: Galleries,
   },
   Details: {
     screen: Option,
