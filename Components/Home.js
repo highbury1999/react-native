@@ -5,6 +5,7 @@ import Artist from './Home/Artist';
 import Artwork from './Home/Artwork';
 
 class Home extends React.Component {
+ 
   render() {
     return (
       <View style={[styles.container]}>
